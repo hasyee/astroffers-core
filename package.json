@@ -1,0 +1,44 @@
+{
+  "name": "astroffers-core",
+  "version": "1.0.0",
+  "description": "Astroffers core modules and data",
+  "main": "lib/index.js",
+  "typings": "lib",
+  "scripts": {
+    "build": "rimraf lib && tsc",
+    "build:w": "rimraf lib && tsc -w",
+    "start": "node ."
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayhasyee/astroffers-core.git"
+  },
+  "keywords": [
+    "astroffers",
+    "data",
+    "calcs",
+    "astronomy"
+  ],
+  "author": {
+    "name": "Péter Hauszknecht",
+    "email": "hasyee@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jayhasyee/astroffers-core/issues"
+  },
+  "homepage": "http://astroffers.org",
+  "devDependencies": {
+    "@types/node": "^9.6.0",
+    "rimraf": "^2.6.2",
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "left-pad": "^1.2.0",
+    "moment": "^2.21.0",
+    "suncalc": "^1.8.0"
+  }
+}
