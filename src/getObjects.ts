@@ -35,7 +35,7 @@ export const getObjects = ({
   return catalog
     .filter(object => {
       return (
-        (brightnessFilter === 'magnitude'
+        (brightnessFilter === BirghtnessType.magnitude
           ? Number.isFinite(object.magnitude) && object.magnitude < magnitude
           : Number.isFinite(object.surfaceBrightness) && object.surfaceBrightness < surfaceBrightness) &&
         object.types.some(t => types[t]) &&
