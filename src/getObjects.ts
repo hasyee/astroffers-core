@@ -17,7 +17,7 @@ export type Options = {
   night: Interval;
 };
 
-export const filterObjects = ({
+export const getObjects = ({
   date,
   latitude,
   longitude,
