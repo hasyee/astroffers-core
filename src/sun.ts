@@ -5,25 +5,11 @@
  */
 
 import moment = require('moment');
-import { Timestamp, Interval, Loc, Ecl, Rad, Transit, TransitType } from './types';
-import {
-  PI2,
-  timeToEpochDayNumber,
-  julianDateToTime,
-  degToRad,
-  JULIAN_DATE_OF_MILLENIUM,
-  radToDms,
-  radToHms,
-  radToHmsString,
-  radToDmsString,
-  radToDeg
-} from './units';
-import { lstToTime, timeToLst } from './lst';
-import { eclToEq } from './coords';
+import { Timestamp, Interval, Loc, Ecl, Rad } from './types';
+import { PI2, timeToEpochDayNumber, degToRad, radToDeg } from './units';
 import { toNoon, toNextDay } from './time';
-import { flatten } from './utils';
 
-const { PI, sin, cos, asin, acos, tan, round } = Math;
+const { sin, cos, asin, acos } = Math;
 
 const getFractionalYear = (time: Timestamp): number => {
   const dayOfYear = moment(time).dayOfYear();
@@ -75,7 +61,12 @@ export const getHalfDayArcOfSun = (time: Timestamp, { lat, lon }: Loc, minAltitu
   return { start, end };
 };
 
-export const getNight = (date: Timestamp, loc: Loc, minAltitude: Rad = 0, isNominalNight: boolean = false): Interval => {
+export const getNight = (
+  date: Timestamp,
+  loc: Loc,
+  minAltitude: Rad = 0,
+  isNominalNight: boolean = false
+): Interval => {
   const noon = toNoon(date);
   const nextDayNoon = toNextDay(noon);
   const thatDayArc = getHalfDayArcOfSun(noon, loc, minAltitude);

@@ -2,7 +2,6 @@ import { Timestamp, Deg, NightInfo } from './types';
 import { getNight } from './sun';
 import { getMoonNight, getMoonPhase } from './moon';
 import { getLocation, degToRad } from './units';
-import { toNoon, toNextDay } from './time';
 import { getIntersection } from './interval';
 import { toMidnight } from './time';
 

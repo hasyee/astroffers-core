@@ -1,23 +1,19 @@
 import SunCalc = require('suncalc');
 import { Timestamp, Loc, Interval } from './types';
 import { radToDeg } from './units';
-import { getIntersection, isInInterval } from './interval';
+import { toNoon } from './time';
+import { getIntersection } from './interval';
 
 const getLowerHalfDayArcsOfMoon = ({ start, end }: Interval, { lat, lon }: Loc): Interval[] => {
   const latDeg = radToDeg(lat);
   const lonDeg = radToDeg(lon);
-  const { rise: riseDate1, set: setDate1, alwaysUp: alwaysUp1, alwaysDown: alwaysDown1 } = SunCalc.getMoonTimes(
-    start,
+  const { rise: riseDate1, set: setDate1, alwaysUp: alwaysUp1 } = SunCalc.getMoonTimes(
+    toNoon(start),
     latDeg,
     lonDeg,
     true
   );
-  const { rise: riseDate2, set: setDate2, alwaysUp: alwaysUp2, alwaysDown: alwaysDown2 } = SunCalc.getMoonTimes(
-    end,
-    latDeg,
-    lonDeg,
-    true
-  );
+  const { rise: riseDate2, set: setDate2 } = SunCalc.getMoonTimes(toNoon(end), latDeg, lonDeg, true);
   const crosses = [
     riseDate1 ? { type: 'rise', time: riseDate1.getTime() } : null,
     setDate1 ? { type: 'set', time: setDate1.getTime() } : null,
@@ -27,7 +23,7 @@ const getLowerHalfDayArcsOfMoon = ({ start, end }: Interval, { lat, lon }: Loc):
     .filter(_ => _)
     .sort((a, b) => a.time - b.time);
   if (crosses.length === 0) return alwaysUp1 ? [] : [ { start: -Infinity, end: Infinity } ];
-  return crosses.reduce((halfDayArcs, cross, i) => {
+  return crosses.reduce((halfDayArcs, cross) => {
     if (cross.type === 'set') return [ ...halfDayArcs, { start: cross.time, end: Infinity } ];
     else {
       if (halfDayArcs.length === 0) return [ { start: -Infinity, end: cross.time } ];

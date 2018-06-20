@@ -1,4 +1,4 @@
-import { NgcObject, NgcInfo, Interval, Timestamp, Deg, Min, BirghtnessType, SetFilter } from './types';
+import { NgcInfo, Interval, Timestamp, Deg, Min, BirghtnessType, SetFilter } from './types';
 import getNgcInfo from './getNgcInfo';
 import { getLocation } from './units';
 import { catalog } from './data';

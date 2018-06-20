@@ -1,6 +1,6 @@
-import { hmsToRad, dmsToRad, radToHmsString, PI2, degToRad } from './units';
+import { PI2, degToRad } from './units';
 import { timeToLst } from './lst';
-import { Rad, Deg, Eq, Az, Loc, Timestamp, Ecl } from './types';
+import { Eq, Az, Loc, Timestamp, Ecl } from './types';
 
 const OBLIQUITY_OF_THE_ECLIPTIC = degToRad(23.439);
 const { sin, cos, atan2, asin } = Math;

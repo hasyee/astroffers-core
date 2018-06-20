@@ -1,4 +1,4 @@
-import { radToDeg, degToRad, PI2 } from './units';
+import { degToRad, PI2 } from './units';
 import { Timestamp, Az, Rad, CoordSeries } from './types';
 
 type AzPoint = {

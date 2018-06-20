@@ -1,6 +1,5 @@
-import { Timestamp, Day, Deg, Rad } from './types';
-import { degToRad, radToDeg, PI2, hmsToRad } from './units';
-import moment = require('moment');
+import { Timestamp, Rad } from './types';
+import { PI2, hmsToRad } from './units';
 
 const GST_REFERENCE = hmsToRad({ hour: 2, min: 37, sec: 57.4 });
 const GST_REFERENCE_TIME = Date.parse('2017-10-31T00:00:00.000Z');

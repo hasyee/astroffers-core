@@ -1,11 +1,9 @@
 import { Timestamp, Loc, Eq, Interval, Rad } from './types';
-import { hmsToRad, dmsToRad, PI2 } from './units';
+import { PI2 } from './units';
 import { eqToAz } from './coords';
-import { toMidnight, toPrevDay } from './time';
 import { timeToLst, lstToTime } from './lst';
-import { getEqCoordsOnDate } from './corrections';
 
-const { asin, acos, tan, ceil, PI, sin, cos, floor, sqrt, round } = Math;
+const { acos, ceil, sin, cos, sqrt } = Math;
 
 export const isRising = (siderealTime: Rad, lat: Rad, ra: Rad, de: Rad): boolean => {
   const t = siderealTime;

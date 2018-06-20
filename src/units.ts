@@ -1,7 +1,7 @@
-import { Deg, Rad, Hour, Hms, Dms, ArcMin, ArcSec, Timestamp, Day, Year, Century, Interval, Loc } from './types';
+import { Deg, Rad, Hour, Hms, Dms, ArcSec, Timestamp, Day, Interval, Loc } from './types';
 import leftpad = require('left-pad');
 
-const { round, floor, ceil, abs, PI } = Math;
+const { round, floor, abs, PI } = Math;
 
 export const PI2 = 2 * PI;
 export const COMPLETE_ARC_SECS = 1296000;

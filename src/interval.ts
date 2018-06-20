@@ -16,3 +16,7 @@ export const isInInterval = (interval: Interval, value: Timestamp): boolean => {
   const { start, end } = interval;
   return value >= start && value <= end;
 };
+
+export const logInterval = ({ start, end }: Interval, label: string = ''): void => {
+  console.log(label, new Date(start).toLocaleString(), '-', new Date(end).toLocaleString());
+};

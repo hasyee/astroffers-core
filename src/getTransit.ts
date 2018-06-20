@@ -1,4 +1,4 @@
-import { Eq, Loc, Interval, Rad, Timestamp } from './types';
+import { Eq, Loc, Rad, Timestamp } from './types';
 import { timeToLst, lstToTime } from './lst';
 import { toNoon, toNextDay } from './time';
 

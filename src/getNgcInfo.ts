@@ -1,5 +1,5 @@
 import { NgcObject, NgcInfo, Loc, Interval, Timestamp, Deg } from './types';
-import { getLocation, degToRad, hmsToRad, dmsToRad } from './units';
+import { degToRad, hmsToRad, dmsToRad } from './units';
 import getHalfDayArc from './getHalfDayArc';
 import { getEqCoordsOnDate } from './corrections';
 import { getIntersection, isInInterval } from './interval';
