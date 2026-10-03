@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jayhasyee/astroffers-core.git"
+    "url": "git+https://github.com/hasyee/astroffers-core.git"
   },
   "keywords": [
     "astroffers",
@@ -29,7 +29,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jayhasyee/astroffers-core/issues"
+    "url": "https://github.com/hasyee/astroffers-core/issues"
   },
   "homepage": "http://astroffers.org",
   "devDependencies": {
